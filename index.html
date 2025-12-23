@@ -1,0 +1,85 @@
+
+ <!DOCTYPE html>
+ <!-- для какой страны настроен сайт могут быть разные de com и тд -->
+<html lang="ru">
+<head>
+<!-- Кодировка страницы -->
+     <meta charset="UTF-8">   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Название вкладки браузера -->
+    <title>Мой первый сайт</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<!-- все что должно быть видно для пользователя находится в body -->
+<body>
+    <!-- Шапка сайта -->
+  <header>
+    <h1>Мой первый сайт</h1>
+
+   <!-- форма для регистрации или же логина -->
+   <form id="registerForm">
+    <div class="form-group">
+      <label for="name">Имя:</label>
+      <input type="text" id="name" name="name" placeholder="Введите Ваше Имя" required>
+      <span class="error-message" id="nameError"></span>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Введите Ваш email" required>
+      <span class="error-message" id="emailError"></span>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Пароль:</label>
+      <input type="password" id="password" name="password" placeholder="Введите Ваш пароль" required>
+      <span class="error-message" id="passwordError"></span>
+    </div>
+
+    <div class="form-group">
+      <label class="checkbox-wrapper">
+        <input type="checkbox" id="terms"> Я принимаю условия
+      </label>
+      <span class="error-message" id="termsError"></span>
+    </div>
+
+    <button type="submit" id="submitBtn" disabled>Зарегистрироваться</button>
+    <!-- если что тут может быть ошибка -->
+<div id="formMessage"></div>
+  </form>
+
+<p id="error" class="error"></p>
+
+    <!-- Навигация сайта -->
+    <nav>
+      <ul>
+        <li>Главная</li>
+        <li>Обо мне</li>
+        <li>Контакты</li>
+      </ul>
+    </nav>
+  </header>
+
+<!-- Основной контент -->
+  <main>
+    <!-- Логический раздел -->
+    <section>
+      <h2>Обо мне</h2>
+      <p>Короткий текст о себе.</p>
+    </section>
+
+    <section>
+      <h2>Почему я учу web</h2>
+      <p>Причина и цель.</p>
+    </section>
+  </main>
+
+
+  <!-- Подвал -->
+  <footer>
+    <p>© 2025</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
+</html>
