@@ -15,7 +15,7 @@
       <nav class="nav">
         <ul class="nav__list">
           <li><a href="#features" class="nav__link">Преимущества</a></li>
-          <li><a href="#form" class="nav__link">Заявка</a></li>
+          <li><a href="#form" class="nav__link btn-scroll">Оставить заявку</a></li>
         </ul>
       </nav>
     </div>
@@ -26,7 +26,7 @@
     <div class="container hero__container">
       <h1 class="hero__title">Лучшее решение для вашего бизнеса</h1>
       <p class="hero__subtitle">Мы помогаем достигать целей быстро и эффективно</p>
-      <a href="#form" class="btn hero__btn">Оставить заявку</a>
+      <a href="#form" class="btn hero__btn btn-scroll">Оставить заявку</a>
     </div>
   </section>
 
@@ -53,14 +53,21 @@
     <div class="container form-section__container">
       <h2 class="form-section__title">Оставьте заявку</h2>
       <form id="contactForm" class="form">
-        <label for="name">Имя</label>
-        <input type="text" id="name" name="name" placeholder="Ваше имя" required>
+  <div class="form-group">
+    <label for="name">Имя:</label>
+    <input type="text" id="name" name="name" placeholder="Ваше имя" required>
+    <small class="error-message"></small>
+  </div>
 
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="example@mail.com" required>
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="example@mail.com" required>
+    <small class="error-message"></small>
+  </div>
 
-        <button type="submit" class="btn form__btn">Отправить</button>
-      </form>
+  <button type="submit" class="btn form__btn">Отправить</button>
+  <p class="form__message"></p>
+</form>
     </div>
   </section>
 
