@@ -1,85 +1,66 @@
-
- <!DOCTYPE html>
- <!-- для какой страны настроен сайт могут быть разные de com и тд -->
+<!DOCTYPE html>
 <html lang="ru">
 <head>
-<!-- Кодировка страницы -->
-     <meta charset="UTF-8">   
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Название вкладки браузера -->
-    <title>Мой первый сайт</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<!-- все что должно быть видно для пользователя находится в body -->
 <body>
-    <!-- Шапка сайта -->
+
+  <!-- Header -->
   <header>
-    <h1>Форма регистрации</h1>
-
-   <!-- форма для регистрации или же логина -->
-   <form id="registerForm">
-    <div class="form-group">
-      <label for="name">Имя:</label>
-      <input type="text" id="name" name="name" placeholder="Введите Ваше Имя" required>
-      <span class="error-message" id="nameError"></span>
-    </div>
-
-    <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" placeholder="Введите Ваш email" required>
-      <span class="error-message" id="emailError"></span>
-    </div>
-
-    <div class="form-group">
-      <label for="password">Пароль:</label>
-      <input type="password" id="password" name="password" placeholder="Введите Ваш пароль" required>
-      <span class="error-message" id="passwordError"></span>
-    </div>
-
-    <div class="form-group">
-      <label class="checkbox-wrapper">
-        <input type="checkbox" id="terms"> Я принимаю условия
-      </label>
-      <span class="error-message" id="termsError"></span>
-    </div>
-
-    <button type="submit" id="submitBtn" disabled>Зарегистрироваться</button>
-    <!-- если что тут может быть ошибка -->
-<div id="formMessage"></div>
-  </form>
-
-<p id="error" class="error"></p>
-
-    <!-- Навигация сайта -->
-    <nav>
-      <ul>
-        <li>Главная</li>
-        <li>Обо мне</li>
-        <li>Контакты</li>
+    <nav class="nav">
+      <div class="logo">MyLanding</div>
+      <ul class="menu">
+        <li><a href="#features">Преимущества</a></li>
+        <li><a href="#form">Заявка</a></li>
       </ul>
     </nav>
   </header>
 
-<!-- Основной контент -->
-  <main>
-    <!-- Логический раздел -->
-    <section>
-      <h2>Обо мне</h2>
-      <p>Короткий текст о себе.</p>
-    </section>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Добро пожаловать!</h1>
+    <p>Лучшее решение для вашего бизнеса</p>
+    <a href="#form" class="btn">Оставить заявку</a>
+  </section>
 
-    <section>
-      <h2>Почему я учу web</h2>
-      <p>Причина и цель.</p>
-    </section>
-  </main>
+  <!-- Features Section -->
+  <section id="features" class="features">
+    <div class="feature">
+      <h3>Быстро</h3>
+      <p>Все процессы автоматизированы</p>
+    </div>
+    <div class="feature">
+      <h3>Надежно</h3>
+      <p>Гарантия качества 100%</p>
+    </div>
+    <div class="feature">
+      <h3>Удобно</h3>
+      <p>Простой интерфейс для всех</p>
+    </div>
+  </section>
 
+  <!-- Form Section -->
+  <section id="form" class="form-section">
+    <h2>Оставьте заявку</h2>
+    <form id="contactForm">
+      <label for="name">Имя:</label>
+      <input type="text" id="name" name="name" required>
 
-  <!-- Подвал -->
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <button type="submit">Отправить</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <p>© 2025</p>
+    <p>© 2025 MyLanding. Все права защищены.</p>
   </footer>
-  <script src="script.js"></script>
-</body>
 
+  <script src="js/main.js"></script>
+</body>
 </html>
