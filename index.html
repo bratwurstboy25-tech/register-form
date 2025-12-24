@@ -3,62 +3,72 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Landing Page</title>
+  <title>MyLanding</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
   <!-- Header -->
-  <header>
-    <nav class="nav">
+  <header class="header">
+    <div class="container header__container">
       <div class="logo">MyLanding</div>
-      <ul class="menu">
-        <li><a href="#features">Преимущества</a></li>
-        <li><a href="#form">Заявка</a></li>
-      </ul>
-    </nav>
+      <nav class="nav">
+        <ul class="nav__list">
+          <li><a href="#features" class="nav__link">Преимущества</a></li>
+          <li><a href="#form" class="nav__link">Заявка</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section class="hero">
-    <h1>Добро пожаловать!</h1>
-    <p>Лучшее решение для вашего бизнеса</p>
-    <a href="#form" class="btn">Оставить заявку</a>
+    <div class="container hero__container">
+      <h1 class="hero__title">Лучшее решение для вашего бизнеса</h1>
+      <p class="hero__subtitle">Мы помогаем достигать целей быстро и эффективно</p>
+      <a href="#form" class="btn hero__btn">Оставить заявку</a>
+    </div>
   </section>
 
-  <!-- Features Section -->
+  <!-- Features -->
   <section id="features" class="features">
-    <div class="feature">
-      <h3>Быстро</h3>
-      <p>Все процессы автоматизированы</p>
-    </div>
-    <div class="feature">
-      <h3>Надежно</h3>
-      <p>Гарантия качества 100%</p>
-    </div>
-    <div class="feature">
-      <h3>Удобно</h3>
-      <p>Простой интерфейс для всех</p>
+    <div class="container features__container">
+      <div class="feature">
+        <h3 class="feature__title">Быстро</h3>
+        <p class="feature__text">Автоматизация процессов позволяет экономить время.</p>
+      </div>
+      <div class="feature">
+        <h3 class="feature__title">Надежно</h3>
+        <p class="feature__text">Гарантия качества и безопасности данных.</p>
+      </div>
+      <div class="feature">
+        <h3 class="feature__title">Удобно</h3>
+        <p class="feature__text">Простой интерфейс и поддержка 24/7.</p>
+      </div>
     </div>
   </section>
 
-  <!-- Form Section -->
+  <!-- Form -->
   <section id="form" class="form-section">
-    <h2>Оставьте заявку</h2>
-    <form id="contactForm">
-      <label for="name">Имя:</label>
-      <input type="text" id="name" name="name" required>
+    <div class="container form-section__container">
+      <h2 class="form-section__title">Оставьте заявку</h2>
+      <form id="contactForm" class="form">
+        <label for="name">Имя</label>
+        <input type="text" id="name" name="name" placeholder="Ваше имя" required>
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="example@mail.com" required>
 
-      <button type="submit">Отправить</button>
-    </form>
+        <button type="submit" class="btn form__btn">Отправить</button>
+      </form>
+    </div>
   </section>
 
   <!-- Footer -->
-  <footer>
-    <p>© 2025 MyLanding. Все права защищены.</p>
+  <footer class="footer">
+    <div class="container footer__container">
+      <p>© 2025 MyLanding. Все права защищены.</p>
+    </div>
   </footer>
 
   <script src="js/main.js"></script>
