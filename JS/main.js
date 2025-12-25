@@ -1,72 +1,65 @@
+// ===== Элементы формы =====
 const form = document.getElementById('contactForm');
 const nameInput = document.getElementById('name');
 const emailInput = document.getElementById('email');
 const messageEl = document.querySelector('.form__message');
 
-// Проверка email
+// ===== Валидация =====
+
+// Email
 function validateEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
-// Проверка имени (только буквы и пробел)
+// Имя (только буквы и пробелы)
 function validateName(name) {
   return /^[а-яА-Яa-zA-Z\s]+$/.test(name);
 }
 
-// Instant feedback
+// ===== Универсальная функция для валидации поля =====
+function validateField(input, validator, errorMessage) {
+  const errorEl = input.nextElementSibling;
+  if (!validator(input.value.trim())) {
+    input.classList.add('error');
+    input.classList.remove('success');
+    errorEl.textContent = errorMessage;
+    errorEl.classList.add('show');
+    return false;
+  } else {
+    input.classList.remove('error');
+    input.classList.add('success');
+    errorEl.textContent = '';
+    errorEl.classList.remove('show');
+    return true;
+  }
+}
+
+// ===== Instant feedback при вводе =====
 [nameInput, emailInput].forEach(input => {
   input.addEventListener('input', () => {
-    const errorEl = input.nextElementSibling;
-    if (input === nameInput && !validateName(input.value.trim())) {
-      input.classList.add('error');
-      input.classList.remove('success');
-      errorEl.textContent = 'Введите корректное имя (только буквы)';
-      errorEl.classList.add('show');
-    } else if (input === emailInput && !validateEmail(input.value.trim())) {
-      input.classList.add('error');
-      input.classList.remove('success');
-      errorEl.textContent = 'Введите корректный email';
-      errorEl.classList.add('show');
-    } else {
-      input.classList.remove('error');
-      input.classList.add('success');
-      errorEl.textContent = '';
-      errorEl.classList.remove('show');
+    if (input === nameInput) {
+      validateField(nameInput, validateName, 'Введите корректное имя (только буквы)');
+    } else if (input === emailInput) {
+      validateField(emailInput, validateEmail, 'Введите корректный email');
     }
   });
 });
 
-// Submit
+// ===== Отправка формы =====
 form.addEventListener('submit', (e) => {
   e.preventDefault();
 
-  let hasError = false;
+  const isNameValid = validateField(nameInput, validateName, 'Введите корректное имя (только буквы)');
+  const isEmailValid = validateField(emailInput, validateEmail, 'Введите корректный email');
 
-  // Проверка имени
-  if (!validateName(nameInput.value.trim())) {
-    const errorEl = nameInput.nextElementSibling;
-    errorEl.textContent = 'Введите корректное имя (только буквы)';
-    errorEl.classList.add('show');
-    nameInput.classList.add('error');
-    hasError = true;
-  }
+  if (!isNameValid || !isEmailValid) return;
 
-  // Проверка email
-  if (!validateEmail(emailInput.value.trim())) {
-    const errorEl = emailInput.nextElementSibling;
-    errorEl.textContent = 'Введите корректный email';
-    errorEl.classList.add('show');
-    emailInput.classList.add('error');
-    hasError = true;
-  }
-
-  if (hasError) return;
-
-  // Loading
+  // Loading state
   messageEl.style.color = 'blue';
   messageEl.textContent = 'Отправка...';
   messageEl.classList.add('show');
 
+  // Имитируем сервер
   setTimeout(() => {
     messageEl.style.color = 'green';
     messageEl.textContent = 'Форма успешно отправлена!';
@@ -75,11 +68,13 @@ form.addEventListener('submit', (e) => {
   }, 1500);
 });
 
-// Плавный скролл
+// ===== Плавный скролл для кнопок =====
 document.querySelectorAll('.btn-scroll').forEach(btn => {
   btn.addEventListener('click', (e) => {
     e.preventDefault();
     const target = document.querySelector(btn.getAttribute('href'));
-    target.scrollIntoView({ behavior: 'smooth' });
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
   });
 });

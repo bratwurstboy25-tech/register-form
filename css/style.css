@@ -1,3 +1,13 @@
+:root {
+  --primary-color: #007bff;
+  --primary-hover: #0056b3;
+  --secondary-color: #f8f9fa;
+  --text-color: #333;
+  --error-color: red;
+  --success-color: green;
+  --font-family: 'Arial', sans-serif;
+}
+
 /* Reset */
 * {
   margin: 0;
@@ -9,6 +19,9 @@
 body {
   line-height: 1.6;
   color: #333;
+  font-family: var(--font-family);
+  color: var(--text-color);
+  line-height: 1.6;
 }
 
 /* Container */
@@ -73,12 +86,22 @@ body {
 .btn {
   transition: all 0.3s ease;
 }
+.btn {
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
 
 .btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
-
+.btn:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
 /* Features */
 
 .feature {
