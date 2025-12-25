@@ -24,4 +24,4 @@
 
 ## Ссылка на проект
 
-Проект можно посмотреть онлайн: [GitHub Pages URL](https://username.github.io/landing-project/)
+Проект можно посмотреть онлайн: [GitHub Pages URL](https://bratwurstboy25-tech.github.io/register-form) 
