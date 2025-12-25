@@ -1,3 +1,4 @@
+/* ==================== CSS Variables ==================== */
 :root {
   --primary-color: #007bff;
   --primary-hover: #0056b3;
@@ -8,250 +9,256 @@
   --font-family: 'Arial', sans-serif;
 }
 
-/* Reset */
+/* ==================== Reset / Base ==================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Arial', sans-serif;
+  font-family: var(--font-family);
 }
 
 body {
-  line-height: 1.6;
-  color: #333;
-  font-family: var(--font-family);
   color: var(--text-color);
   line-height: 1.6;
+  background-color: #fff;
 }
 
-/* Container */
+/* ==================== Layout ==================== */
 .container {
   width: 90%;
   max-width: 600px;
   margin: 0 auto;
 }
 
-/* Header */
+/* ==================== UI Components ==================== */
+
+/* Buttons */
+.btn {
+  background-color: var(--primary-color);
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Cards */
+.card {
+  background-color: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* ==================== Header ==================== */
 .header {
-  background-color: #007bff;
+  background-color: var(--primary-color);
   color: #fff;
   padding: 1rem 0;
 }
+
 .header__container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .nav__list {
   list-style: none;
   display: flex;
   gap: 1.5rem;
 }
+
 .nav__link {
   color: #fff;
   text-decoration: none;
   transition: color 0.3s;
 }
+
 .nav__link:hover {
   color: #ffd700;
 }
 
-/* Hero */
+/* ==================== Hero ==================== */
 .hero {
   background-color: #e9ecef;
   padding: 6rem 0;
   text-align: center;
 }
+
 .hero__title {
   font-size: 2.5rem;
   margin-bottom: 1rem;
 }
+
 .hero__subtitle {
   font-size: 1.2rem;
   margin-bottom: 2rem;
 }
+
 .hero__btn {
   padding: 0.75rem 2rem;
-  background-color: #007bff;
-  color: white;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: background 0.3s;
-}
-.hero__btn:hover {
-  background-color: #0056b3;
 }
 
-/* Кнопки */
-.btn {
-  transition: all 0.3s ease;
-}
-.btn {
-  background-color: var(--primary-color);
-  color: white;
-  border-radius: 5px;
-  transition: all 0.3s ease;
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-.btn:hover {
-  background-color: var(--primary-hover);
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-/* Features */
-
-.feature {
-  background-color: white;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
-  text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.feature:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-}
-
+/* ==================== Features ==================== */
 .features {
-  background-color: #f8f9fa;
+  background-color: var(--secondary-color);
   padding: 4rem 0;
 }
+
 .features__container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
 }
+
 .feature {
-  background-color: white;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
   text-align: center;
 }
+
 .feature__title {
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
 
-/* Form */
+/* ==================== Form ==================== */
 .form-section {
   padding: 4rem 0;
 }
+
 .form-section__container {
-  width: 100%;
   max-width: 400px;
   margin: 0 auto;
 }
+
 .form-section__title {
   text-align: center;
   margin-bottom: 2rem;
   font-size: 2rem;
 }
+
 .form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
+
 .form-group {
   display: flex;
   flex-direction: column;
 }
+
 .form input {
   padding: 0.75rem;
   border: 1px solid #ccc;
   border-radius: 5px;
   width: 100%;
-  transition: border 0.3s;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
+
+.form input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+}
+
 .form input.error {
-  border-color: red;
+  border-color: var(--error-color);
   animation: shake 0.3s;
 }
+
 .form input.success {
-  border-color: green;
+  border-color: var(--success-color);
 }
+
 .error-message {
-  color: red;
-  font-size: 0.85rem;
   height: 1rem;
-  transition: opacity 0.3s;
+  font-size: 0.85rem;
+  color: var(--error-color);
   opacity: 0;
+  transition: opacity 0.3s;
 }
 
 .error-message.show {
   opacity: 1;
 }
 
+.form__btn {
+  padding: 0.75rem;
+  border: none;
+  cursor: pointer;
+}
+
 .form__message {
   margin-top: 0.5rem;
   font-weight: bold;
   text-align: center;
   opacity: 0;
-  transition: opacity 0.5s;
+  transition: opacity 0.3s ease;
 }
 
 .form__message.show {
   opacity: 1;
   animation: fadeIn 0.5s;
 }
-.form__btn {
-  padding: 0.75rem;
-  border: none;
-  background-color: #007bff;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-.form__btn:hover {
-  background-color: #0056b3;
-}
-.form__message {
-  margin-top: 0.5rem;
-  font-weight: bold;
-  text-align: center;
-}
 
-/* Footer */
+/* ==================== Footer ==================== */
 .footer {
   background-color: #343a40;
-  color: white;
+  color: #fff;
   padding: 1rem 0;
   text-align: center;
 }
 
-/* Адаптив */
-@media (max-width: 768px) {
-  .features__container {
-    grid-template-columns: 1fr;
-  }
-  .hero__title {
-    font-size: 2rem;
-  }
-  .hero__subtitle {
-    font-size: 1rem;
-  }
-  .form-section__container {
-    max-width: 100%;
-    padding: 0 1rem;
-  }
+/* ==================== Animations ==================== */
+.section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease;
 }
 
-/* Анимации */
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 @keyframes shake {
   0% { transform: translateX(0); }
-  25% { transform: translateX(-5px); }
-  50% { transform: translateX(5px); }
-  75% { transform: translateX(-5px); }
+  25% { transform: translateX(-4px); }
+  50% { transform: translateX(4px); }
+  75% { transform: translateX(-4px); }
   100% { transform: translateX(0); }
 }
 
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+/* ==================== Responsive ==================== */
+@media (max-width: 768px) {
+  .features__container {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__title {
+    font-size: 2rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1rem;
+  }
+
+  .form-section__container {
+    padding: 0 1rem;
+  }
 }

@@ -1,83 +1,131 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MyLanding</title>
-  <link rel="stylesheet" href="css/style.css">
+
+  <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
 
-  <!-- Header -->
+  <!-- ==================== Header ==================== -->
   <header class="header">
     <div class="container header__container">
       <div class="logo">MyLanding</div>
+
       <nav class="nav">
         <ul class="nav__list">
-          <li><a href="#features" class="nav__link">Преимущества</a></li>
-          <li><a href="#form" class="nav__link btn-scroll">Оставить заявку</a></li>
+          <li>
+            <a href="#features" class="nav__link">Преимущества</a>
+          </li>
+          <li>
+            <a href="#form" class="nav__link btn-scroll">Оставить заявку</a>
+          </li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero">
+  <!-- ==================== Hero ==================== -->
+  <section class="hero section">
     <div class="container hero__container">
-      <h1 class="hero__title">Лучшее решение для вашего бизнеса</h1>
-      <p class="hero__subtitle">Мы помогаем достигать целей быстро и эффективно</p>
-      <a href="#form" class="btn hero__btn btn-scroll">Оставить заявку</a>
+      <h1 class="hero__title">
+        Лучшее решение для вашего бизнеса
+      </h1>
+
+      <p class="hero__subtitle">
+        Мы помогаем достигать целей быстро и эффективно
+      </p>
+
+      <a href="#form" class="btn hero__btn btn-scroll">
+        Оставить заявку
+      </a>
     </div>
   </section>
 
-  <!-- Features -->
-  <section id="features" class="features">
+  <!-- ==================== Features ==================== -->
+  <section id="features" class="features section">
     <div class="container features__container">
-      <div class="feature">
+
+      <div class="feature card">
         <h3 class="feature__title">Быстро</h3>
-        <p class="feature__text">Автоматизация процессов позволяет экономить время.</p>
+        <p class="feature__text">
+          Автоматизация процессов позволяет экономить время.
+        </p>
       </div>
-      <div class="feature">
+
+      <div class="feature card">
         <h3 class="feature__title">Надежно</h3>
-        <p class="feature__text">Гарантия качества и безопасности данных.</p>
+        <p class="feature__text">
+          Гарантия качества и безопасности данных.
+        </p>
       </div>
-      <div class="feature">
+
+      <div class="feature card">
         <h3 class="feature__title">Удобно</h3>
-        <p class="feature__text">Простой интерфейс и поддержка 24/7.</p>
+        <p class="feature__text">
+          Простой интерфейс и поддержка 24/7.
+        </p>
       </div>
+
     </div>
   </section>
 
-  <!-- Form -->
-  <section id="form" class="form-section">
+  <!-- ==================== Form ==================== -->
+  <section id="form" class="form-section section">
     <div class="container form-section__container">
-      <h2 class="form-section__title">Оставьте заявку</h2>
+
+      <h2 class="form-section__title">
+        Оставьте заявку
+      </h2>
+
       <form id="contactForm" class="form">
-  <div class="form-group">
-    <label for="name">Имя:</label>
-    <input type="text" id="name" name="name" placeholder="Ваше имя" required>
-    <small class="error-message"></small>
-  </div>
 
-  <div class="form-group">
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" placeholder="example@mail.com" required>
-    <small class="error-message"></small>
-  </div>
+        <div class="form-group">
+          <label for="name">Имя:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Ваше имя"
+            required
+          />
+          <small class="error-message"></small>
+        </div>
 
-  <button type="submit" class="btn form__btn">Отправить</button>
-  <p class="form__message"></p>
-</form>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="example@mail.com"
+            required
+          />
+          <small class="error-message"></small>
+        </div>
+
+        <button type="submit" class="btn form__btn">
+          Отправить
+        </button>
+
+        <p class="form__message"></p>
+      </form>
+
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- ==================== Footer ==================== -->
   <footer class="footer">
     <div class="container footer__container">
       <p>© 2025 MyLanding. Все права защищены.</p>
     </div>
   </footer>
 
+  <!-- ==================== Scripts ==================== -->
   <script src="js/main.js"></script>
+
 </body>
 </html>
